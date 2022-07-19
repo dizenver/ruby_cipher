@@ -1,13 +1,21 @@
 def bubble_sort(arr)
+  #Display Input Array
   puts "\nInput: #{arr}"
-  max_times = arr.length
-  max_times.times do
+
+  #Calculate the max number of cycles this needs to be run (n-1)
+  max_cycles = arr.length
+  # Run arr.each max_cycle amount of times
+  max_cycles.times do
+    #Interate each index excluding last index as it will be swapped on the second to last index with i+1 if needed
     arr[0..-2].each_with_index do |num,i|
+      # Check if value is greater than next value 
         if arr[i] > arr[i+1]
+          # Swap values if true
           arr[i], arr[i+1] = arr[i+1], arr[i] 
         end
     end
   end
+  # Display bubble sorted array
   puts "Output: #{arr}"
 end
 
